@@ -9,7 +9,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1A3C34; /* 墨绿色 */
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #fff;
             position: relative;
             height: 100vh;
@@ -24,7 +25,7 @@
             background: #333;
             transform-origin: center left;
             transition: transform 4s ease;
-            z-index: 5; /* 低于内容但不覆盖背景 */
+            z-index: 5; /* 降低门层级，低于内容但不覆盖背景 */
         }
         body::before {
             left: 0;
@@ -157,4 +158,58 @@
                     <h3>抖音MAX</h3>
                     <p>直播短视！请注意广告的约炮平台</p>
                 </div>
-   
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com" target="_blank">
+                <img src="images6.jpg" alt="Thumbnail">
+                <div class="item-content">
+                    <h3>地扯六</h3>
+                    <p>注册赠送300 | 点击查看</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com" target="_blank">
+                <img src="images7.jpg" alt="Thumbnail">
+                <div class="item-content">
+                    <h3>地扯七</h3>
+                    <p>下载: 下載量: 789123次 | 点击查看</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com" target="_blank">
+                <img src="images8.jpg" alt="Thumbnail">
+                <div class="item-content">
+                    <h3>地扯八</h3>
+                    <p>限时活动，送888 | 点击查看</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com" target="_blank">
+                <img src="images9.jpg" alt="Thumbnail">
+                <div class="item-content">
+                    <h3>新平台九</h3>
+                    <p>全新娱乐体验 | 点击查看</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com" target="_blank">
+                <img src="images10.jpg" alt="Thumbnail">
+                <div class="item-content">
+                    <h3>新平台十</h3>
+                    <p>限时优惠活动 | 点击查看</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
