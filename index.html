@@ -22,32 +22,26 @@
             position: relative;
             height: 100vh;
         }
-        body::before,
-        body::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 50%;
-            height: 100%;
-            background: #333;
-            transform-origin: center left;
-            transition: transform 4s ease;
-            z-index: 5; /* 低于内容但不覆盖背景 */
+        /* 移除开门动画相关样式 */
+        /* 滑动公告样式 */
+        .announcement {
+            width: 100%;
+            background-color: rgba(255, 215, 0, 0.8); /* 浅金色背景 */
+            color: #333; /* 深色文字 */
+            text-align: center;
+            padding: 5px 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 40; /* 确保在 header 之上 */
         }
-        body::before {
-            left: 0;
-            transform: perspective(1000px) rotateY(0deg);
+        .announcement-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: slide 10s infinite linear; /* 10秒完成一次循环 */
         }
-        body::after {
-            right: 0;
-            transform: perspective(1000px) rotateY(0deg);
-            transform-origin: center right;
-        }
-        body.loaded::before {
-            transform: perspective(1000px) rotateY(-90deg);
-        }
-        body.loaded::after {
-            transform: perspective(1000px) rotateY(90deg);
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
         .header {
             background-color: rgba(153, 77, 255, 0.8);
@@ -118,6 +112,9 @@
     </style>
 </head>
 <body>
+    <div class="announcement">
+        <div class="announcement-content">遇到网页打不开浏览器缓存清一下再打开或换个浏览器再打开</div>
+    </div>
     <div class="header">
         <h2>⚠️约炮的都是诈骗⚠️</h2>
     </div>
@@ -195,7 +192,7 @@
             </a>
         </div>
         <div class="item">
-            <a href=""http://42.51.43.192:25504?Tesla=NjAwNDMz" target="_blank">
+            <a href="http://42.51.43.192:25504?Tesla=NjAwNDMz" target="_blank">
                 <img src="images2.jpg" alt="Thumbnail">
                 <div class="item-content">
                     <h3>9.欧亚国际</h3>
@@ -213,10 +210,5 @@
             </a>
         </div>
     </div>
-    <script>
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
-        });
-    </script>
 </body>
 </html>
