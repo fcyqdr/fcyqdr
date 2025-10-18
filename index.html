@@ -12,9 +12,6 @@
         gtag('js', new Date());
         gtag('config', 'G-95QQNEC27X');
     </script>
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/244151436.js"></script>
-    <!-- End of HubSpot Embed Code -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -176,31 +173,6 @@
                 </div>
             </a>
         </div>
-        <div class="item">
-            <a href="javascript:void(0)" onclick="openHubSpotChat()">
-                <img src="images7.jpg" alt="客服图标">
-                <div class="item-content">
-                    <h3>7. 在线客服</h3>
-                    <p>点击联系我们的客服团队</p>
-                </div>
-            </a>
-        </div>
     </div>
-    <script>
-        function openHubSpotChat() {
-            const checkWidget = setInterval(() => {
-                if (window.HubSpotConversations && window.HubSpotConversations.widget) {
-                    window.HubSpotConversations.widget.open();
-                    clearInterval(checkWidget);
-                }
-            }, 500); // 每500ms检查一次
-            setTimeout(() => {
-                clearInterval(checkWidget); // 10秒后停止检查
-                if (!window.HubSpotConversations) {
-                    alert('聊天窗口加载失败，请刷新页面或稍后重试');
-                }
-            }, 10000);
-        }
-    </script>
 </body>
 </html>
