@@ -25,20 +25,21 @@
             position: relative;
             height: 100vh;
         }
+        /* 滑动公告样式 */
         .announcement {
             width: 100%;
-            background-color: rgba(255, 215, 0, 0.8);
-            color: #333;
+            background-color: rgba(255, 215, 0, 0.8); /* 浅金色背景 */
+            color: #333; /* 深色文字 */
             text-align: center;
             padding: 5px 0;
             overflow: hidden;
             position: relative;
-            z-index: 40;
+            z-index: 40; /* 确保在 header 之上 */
         }
         .announcement-content {
             display: inline-block;
             white-space: nowrap;
-            animation: slide 10s infinite linear;
+            animation: slide 10s infinite linear; /* 10秒完成一次循环 */
         }
         @keyframes slide {
             0% { transform: translateX(100%); }
@@ -134,7 +135,7 @@
             <a href="http://wv24.icu" target="_blank">
                 <img src="images12.jpg" alt="Thumbnail">
                 <div class="item-content">
-                    <h3>2. 幼女萝莉</h3>
+                    <h3>2. 呦女萝莉</h3>
                     <p>什么鸡巴类型的视频都有</p>
                 </div>
             </a>
@@ -196,7 +197,7 @@
             setTimeout(() => {
                 clearInterval(checkWidget); // 10秒后停止检查
                 if (!window.HubSpotConversations) {
-                    alert('聊天窗口加载失败，请刷新页面重试或联系支持');
+                    alert('聊天窗口加载失败，请刷新页面或稍后重试');
                 }
             }, 10000);
         }
