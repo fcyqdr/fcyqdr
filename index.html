@@ -183,16 +183,6 @@
             opacity: 0.96;
         }
 
-        /* 复制提示 */
-        .copy-tip {
-            text-align: center;
-            margin: 10px auto 0;
-            font-size: 13px;
-            color: #ffcc00;
-            z-index: 30;
-            position: relative;
-        }
-
         /* 模式切换 */
         .mode-toggle {
             position: fixed;
@@ -260,11 +250,8 @@
 
     <!-- 头部警告 -->
     <div class="header">
-        <h2>约炮的都是诈骗<br>永久网址: kp235.vip</h2>
+        <h2>防丢失！先注册再购买！<br>永久网址: kp235.vip</h2>
     </div>
-
-    <!-- 复制提示 -->
-    <div class="copy-tip">点击磁贴复制注册链接</div>
 
     <!-- 磁贴列表 -->
     <div class="container">
@@ -337,7 +324,7 @@
     </button>
 
     <!-- 返回顶部 -->
-    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">返回顶部</button>
+    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
 
     <script>
         // 模式切换
@@ -361,15 +348,11 @@
             document.querySelector('.back-top').classList.toggle('show', window.scrollY > 300);
         });
 
-        // 点击复制链接
+        // 点击磁贴直接进入网站
         document.querySelectorAll('.item a').forEach(link => {
             link.addEventListener('click', e => {
-                e.preventDefault();
-                const href = link.getAttribute('href');
-                navigator.clipboard.writeText(href).then(() => {
-                    alert('注册链接已复制！快去注册吧！');
-                    setTimeout(() => window.open(href, '_blank'), 500);
-                });
+                e.preventDefault(); // 防止默认跳转（可选）
+                window.open(link.getAttribute('href'), '_blank');
             });
         });
     </script>
