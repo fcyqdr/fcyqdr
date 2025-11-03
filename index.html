@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小巷子的快乐</title>
+    <title>小巷子的快乐 - 深夜不打烊的秘密花园</title>
+    <meta name="description" content="小巷子的快乐：AI脱衣、幼女萝莉、真人直播、咸湿视频，开云体育、欧亚国际，注册永久观看！">
+    <meta property="og:title" content="小巷子的快乐 - 深夜不打烊的秘密花园">
+    <meta property="og:description" content="AI脱衣、萝莉资源、真人直播，注册永久观看！">
+    <meta property="og:image" content="https://你的域名.com/share.jpg">
+    <meta property="og:url" content="https://你的域名.com">
+    <meta property="og:type" content="website">
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-95QQNEC27X"></script>
     <script>
@@ -12,161 +19,308 @@
         gtag('js', new Date());
         gtag('config', 'G-95QQNEC27X');
     </script>
+
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #4B0082; /* 深紫色 */
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background: #4B0082 url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
             color: #fff;
+            min-height: 100vh;
             position: relative;
-            height: 100vh;
+            overflow-x: hidden;
         }
-        /* 滑动公告样式 */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(75, 0, 130, 0.8);
+            z-index: 1;
+            transition: background 0.6s ease;
+        }
+
+        /* 暗黑/亮白模式 */
+        body.light {
+            background: #f0f8ff url('https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
+        }
+        body.light::before { background: rgba(255, 255, 255, 0.8); }
+
+        /* 滑动公告 */
         .announcement {
-            width: 100%;
-            background-color: rgba(255, 215, 0, 0.8); /* 浅金色背景 */
-            color: #333; /* 深色文字 */
-            text-align: center;
-            padding: 5px 0;
-            overflow: hidden;
             position: relative;
-            z-index: 40; /* 确保在 header 之上 */
+            z-index: 40;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            color: #fff;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: bold;
         }
         .announcement-content {
             display: inline-block;
-            white-space: nowrap;
-            animation: slide 10s infinite linear; /* 10秒完成一次循环 */
+            animation: slide 8s linear infinite;
         }
         @keyframes slide {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
+
+        /* 头部警告 */
         .header {
-            background-color: rgba(153, 77, 255, 0.8);
-            color: white;
-            padding: 10px;
+            position: relative;
+            z-index: 30;
             text-align: center;
-            backdrop-filter: blur(5px);
-            position: relative;
-            z-index: 30;
+            padding: 15px;
+            background: linear-gradient(135deg, #9c27b0, #e91e63);
+            font-weight: bold;
+            font-size: 18px;
+            text-shadow: 0 0 12px #ff00ff, 0 0 24px #ff0000;
+            animation: glow 2s infinite;
         }
-        .header h2 {
-            margin: 0;
-            font-size: 24px;
-            animation: glowAndBlink 2s infinite;
-            text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff00ff;
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 12px #ff00ff, 0 0 24px #ff0000; }
+            50% { text-shadow: 0 0 6px #fff; }
         }
-        @keyframes glowAndBlink {
-            0% { opacity: 1; text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff00ff; }
-            50% { opacity: 0.5; text-shadow: 0 0 5px #fff, 0 0 10px #ff0000; }
-            100% { opacity: 1; text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff00ff; }
-        }
+
+        /* 容器 */
         .container {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
             position: relative;
             z-index: 30;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
+
+        /* 磁贴 */
         .item {
-            display: flex;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            margin-bottom: 16px;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            background-size: 400% 400%;
+            animation: rainbowFlow var(--flow-speed, 20s) ease infinite;
+            will-change: background-position;
         }
+        .item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.55);
+        }
+        .item:active {
+            transform: translateY(-8px) scale(0.98);
+            transition: transform 0.1s;
+        }
+
+        /* 文字遮罩 */
+        .item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 32px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes rainbowFlow {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 错开动画 */
+        .item:nth-child(1) { animation-delay: 0s; }
+        .item:nth-child(2) { animation-delay: 0.5s; }
+        .item:nth-child(3) { animation-delay: 1s; }
+        .item:nth-child(4) { animation-delay: 1.5s; }
+        .item:nth-child(5) { animation-delay: 2s; }
+        .item:nth-child(6) { animation-delay: 2.5s; }
+
         .item a {
             display: flex;
             align-items: center;
-            width: 100%;
-            color: #fff;
+            padding: 20px;
+            color: white;
             text-decoration: none;
+            position: relative;
+            z-index: 2;
         }
-        .item a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+
         .item img {
-            width: 60px;
-            height: 60px;
-            margin-right: 10px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            border: 2px solid #ffd700;
+            margin-right: 16px;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.95);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            animation: fadeInImg 0.6s forwards;
         }
-        .item-content {
-            flex-grow: 1;
+        .item:hover img {
+            transform: scale(1.15);
         }
+        @keyframes fadeInImg {
+            to { opacity: 1; }
+        }
+
         .item-content h3 {
-            margin: 0;
-            font-size: 16px;
+            margin: 0 0 6px;
+            font-size: 19px;
             color: #ffd700;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.7);
         }
         .item-content p {
-            margin: 5px 0;
-            color: #fff;
-            font-size: 12px;
+            margin: 0;
+            font-size: 14px;
+            color: #f8f8f8;
+            opacity: 0.96;
+        }
+
+        /* 复制提示 */
+        .copy-tip {
+            text-align: center;
+            margin: 10px auto 0;
+            font-size: 13px;
+            color: #ffcc00;
+            z-index: 30;
+            position: relative;
+        }
+
+        /* 模式切换 */
+        .mode-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mode-toggle:hover {
+            background: rgba(255, 215, 0, 0.9);
+            transform: scale(1.12) rotate(15deg);
+        }
+        .mode-toggle svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        /* 返回顶部 */
+        .back-top {
+            position: fixed;
+            bottom: 80px;
+            right: 25px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255,107,0,0.9);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 99;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+        .back-top.show { opacity: 1; }
+
+        @media (max-width: 480px) {
+            .item img { width: 68px; height: 68px; }
+            .item-content h3 { font-size: 17px; }
+            .item-content p { font-size: 13px; }
+            .item { padding: 16px; }
+            .container { padding: 16px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- 滑动公告 -->
     <div class="announcement">
         <div class="announcement-content">防止掉失！注册后再充值！</div>
     </div>
+
+    <!-- 头部警告 -->
     <div class="header">
-        <h2>⚠️约炮的都是诈骗⚠️         
-保存备用网址:kp235.vip</h2>
+        <h2>约炮的都是诈骗<br>保存备用网址: kp235.vip</h2>
     </div>
+
+    <!-- 复制提示 -->
+    <div class="copy-tip">点击磁贴复制注册链接</div>
+
+    <!-- 磁贴列表 -->
     <div class="container">
-        <div class="item">
+        <div class="item" style="--flow-speed: 20s;">
             <a href="https://u4p8z6h4s3o9q8h7j4y9.cc/?channel=6d530728c0583d8037db5bd8e9e6ea52" target="_blank">
-                <img src="images11.jpg" alt="Thumbnail">
+                <img src="images11.jpg" alt="Ai脱衣">
                 <div class="item-content">
                     <h3>1. Ai脱衣</h3>
                     <p>Ai去衣！满足你的性幻想！</p>
                 </div>
             </a>
         </div>
-        <div class="item">
+
+        <div class="item" style="--flow-speed: 20s;">
             <a href="http://wv24.icu" target="_blank">
-                <img src="images12.jpg" alt="Thumbnail">
+                <img src="images12.jpg" alt="呦女萝莉">
                 <div class="item-content">
                     <h3>2. 呦女萝莉</h3>
                     <p>什么鸡巴类型的视频都有</p>
                 </div>
             </a>
         </div>
-        <div class="item">
+
+        <div class="item" style="--flow-speed: 20s;">
             <a href="http://avaw.cc" target="_blank">
-                <img src="images3.jpg" alt="Thumbnail">
+                <img src="images3.jpg" alt="直播">
                 <div class="item-content">
                     <h3>3. 直播</h3>
                     <p>真人直播平台</p>
                 </div>
             </a>
         </div>
-        <div class="item">
+
+        <div class="item" style="--flow-speed: 20s;">
             <a href="http://se678.top" target="_blank">
-                <img src="images4.jpg" alt="Thumbnail">
+                <img src="images4.jpg" alt="咸湿视频">
                 <div class="item-content">
                     <h3>4. 咸湿视频</h3>
                     <p>人兽 欧美 亚洲 萝莉 绿帽</p>
                 </div>
             </a>
         </div>
-        <div class="item">
-            <a href="https://www.iawrq2.vip:9103/entry/register14330/?i_code=27936549">
-                <img src="images1.jpg" alt="Thumbnail">
+
+        <div class="item" style="--flow-speed: 20s;">
+            <a href="https://www.iawrq2.vip:9103/entry/register14330/?i_code=27936549" target="_blank">
+                <img src="images1.jpg" alt="开云体育">
                 <div class="item-content">
                     <h3>5. 开云体育</h3>
                     <p>体育赛事娱乐平台</p>
                 </div>
             </a>
         </div>
-        <div class="item">
+
+        <div class="item" style="--flow-speed: 20s;">
             <a href="http://42.51.43.192:25504?Tesla=NjAwNDMz" target="_blank">
-                <img src="images2.jpg" alt="Thumbnail">
+                <img src="images2.jpg" alt="欧亚国际">
                 <div class="item-content">
                     <h3>6. 欧亚国际</h3>
                     <p>实体娱乐城全新娱乐体验</p>
@@ -174,5 +328,51 @@
             </a>
         </div>
     </div>
+
+    <!-- 模式切换 -->
+    <button class="mode-toggle" id="mode-toggle" title="切换到亮白模式">
+        <svg id="mode-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.64 13a1 1 0 0 1-1 .89 8.05 8.05 0 1 1-8.94-8.94 1 1 0 0 1 .9 1.75A6.06 6.06 0 1 0 18.75 19a1 1 0 0 1 1.9.36 8 8 0 0 1 1-6.36z"/>
+        </svg>
+    </button>
+
+    <!-- 返回顶部 -->
+    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
+
+    <script>
+        // 模式切换
+        const modeBtn = document.getElementById('mode-toggle');
+        const icon = document.getElementById('mode-icon');
+        const moonPath = "M21.64 13a1 1 0 0 1-1 .89 8.05 8.05 0 1 1-8.94-8.94 1 1 0 0 1 .9 1.75A6.06 6.06 0 1 0 18.75 19a1 1 0 0 1 1.9.36 8 8 0 0 1 1-6.36z";
+        const sunPath = "M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-7v2a1 1 0 1 1-2 0V0a1 1 0 1 1 2 0zm0 22v-2a1 1 0 1 1-2 0v2a1 1 0 1 1 2 0zm10-10h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2zM2 12h2a1 1 0 1 1 0 2H2a1 1 0 1 1 0-2zm17.66-6.34l-1.42 1.42a1 1 0 1 1-1.42-1.42l1.42-1.42a1 1 0 1 1 1.42 1.42zm-11.32 0a1 1 0 0 1 0 1.42l-1.42 1.42a1 1 0 1 1-1.42-1.42l1.42-1.42a1 1 0 0 1 1.42 0zm11.32 12.68a1 1 0 0 1 0-1.42l1.42-1.42a1 1 0 1 1 1.42 1.42l-1.42 1.42a1 1 0 0 1-1.42 0zm-11.32 0a1 1 0 0 1-1.42 0l-1.42-1.42a1 1 0 1 1 1.42-1.42l1.42 1.42a1 1 0 0 1 0 1.42z";
+        modeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            if (document.body.classList.contains('light')) {
+                icon.innerHTML = `<path d="${sunPath}"/>`;
+                modeBtn.title = '切换到暗黑模式';
+            } else {
+                icon.innerHTML = `<path d="${moonPath}"/>`;
+                modeBtn.title = '切换到亮白模式';
+            }
+        });
+
+        // 返回顶部
+        window.addEventListener('scroll', () => {
+            document.querySelector('.back-top').classList.toggle('show', window.scrollY > 300);
+        });
+
+        // 点击复制链接
+        document.querySelectorAll('.item a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                navigator.clipboard.writeText(href).then(() => {
+                    alert('注册链接已复制！快去注册吧！');
+                    setTimeout(() => window.open(href, '_blank'), 500);
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
