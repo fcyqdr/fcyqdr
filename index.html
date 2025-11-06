@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小巷子的快乐 - 深夜不打烊的秘密花园</title>
-    <meta name="description" content="小巷子的快乐：AI脱衣、幼女萝莉、真人直播、咸湿视频，开云体育、欧亚国际，注册永久观看！">
-    <meta property="og:title" content="小巷子的快乐 - 深夜不打烊的秘密花园">
-    <meta property="og:description" content="AI脱衣、萝莉资源、真人直播，注册永久观看！">
-    <meta property="og:image" content="https://你的域名.com/share.jpg">
-    <meta property="og:url" content="https://你的域名.com">
-    <meta property="og:type" content="website">
+    <title>小黑巷 - 深夜不打烊的秘密花园</title>
+    <meta name="description" content="小黑巷每日更新AI脱衣、萝莉资源、真人直播，注册永久观看！">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-95QQNEC27X"></script>
@@ -20,11 +15,28 @@
         gtag('config', 'G-95QQNEC27X');
     </script>
 
+    <!-- Statcounter for kp235.vip -->
+    <script type="text/javascript">
+    var sc_project=13181548; 
+    var sc_invisible=1; 
+    var sc_security="cb4659eb"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js"
+    async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="https://c.statcounter.com/13181548/0/cb4659eb/1/"
+    alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: "Microsoft YaHei", Arial, sans-serif;
-            background: #4B0082 url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
+            background: #000 url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
             color: #fff;
             min-height: 100vh;
             position: relative;
@@ -34,13 +46,13 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(75, 0, 130, 0.8);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1;
             transition: background 0.6s ease;
         }
 
         /* 暗黑/亮白模式 */
-        body.light {
+        body.light { 
             background: #f0f8ff url('https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
         }
         body.light::before { background: rgba(255, 255, 255, 0.8); }
@@ -48,7 +60,7 @@
         /* 滑动公告 */
         .announcement {
             position: relative;
-            z-index: 40;
+            z-index: 10;
             background: linear-gradient(90deg, #ff8a00, #e52e71);
             color: #fff;
             text-align: center;
@@ -60,9 +72,9 @@
         }
         .announcement-content {
             display: inline-block;
-            animation: slide 8s linear infinite;
+            animation: scroll 12s linear infinite;
         }
-        @keyframes slide {
+        @keyframes scroll {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
@@ -70,13 +82,13 @@
         /* 头部警告 */
         .header {
             position: relative;
-            z-index: 30;
+            z-index: 10;
             text-align: center;
             padding: 15px;
             background: linear-gradient(135deg, #9c27b0, #e91e63);
             font-weight: bold;
             font-size: 18px;
-            text-shadow: 0 0 12px #ff00ff, 0 0 24px #ff0000;
+            text-shadow: 0 0 12px #ff00ff;
             animation: glow 2s infinite;
         }
         @keyframes glow {
@@ -84,106 +96,185 @@
             50% { text-shadow: 0 0 6px #fff; }
         }
 
-        /* 容器 */
-        .container {
+        /* 磁贴容器 */
+        .tiles-container {
             position: relative;
-            z-index: 30;
+            z-index: 10;
             padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
+        @media (min-width: 768px) {
+            .tiles-container { grid-template-columns: repeat(3, 1fr); }
+        }
 
-        /* 磁贴 */
-        .item {
-            margin-bottom: 16px;
+        /* 彩虹流动磁贴 */
+        .tile {
             border-radius: 32px;
             overflow: hidden;
             box-shadow: 0 12px 28px rgba(0,0,0,0.45);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 28px 18px;
+            min-height: 190px;
+            text-align: center;
             position: relative;
             background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
             background-size: 400% 400%;
             animation: rainbowFlow var(--flow-speed, 20s) ease infinite;
-            will-change: background-position;
         }
-        .item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.55);
+        .tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.55);
         }
-        .item:active {
-            transform: translateY(-8px) scale(0.98);
-            transition: transform 0.1s;
-        }
-
-        /* 文字遮罩 */
-        .item::before {
+        .tile::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.25);
             border-radius: 32px;
             z-index: 1;
-            pointer-events: none;
         }
-
         @keyframes rainbowFlow {
             0%   { background-position: 0% 50%; }
             50%  { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        .tile:nth-child(1) { animation-delay: 0s; }
+        .tile:nth-child(2) { animation-delay: 0.5s; }
+        .tile:nth-child(3) { animation-delay: 1s; }
+        .tile:nth-child(4) { animation-delay: 1.5s; }
+        .tile:nth-child(5) { animation-delay: 2s; }
+        .tile:nth-child(6) { animation-delay: 2.5s; }
 
-        /* 错开动画 */
-        .item:nth-child(1) { animation-delay: 0s; }
-        .item:nth-child(2) { animation-delay: 0.5s; }
-        .item:nth-child(3) { animation-delay: 1s; }
-        .item:nth-child(4) { animation-delay: 1.5s; }
-        .item:nth-child(5) { animation-delay: 2s; }
-        .item:nth-child(6) { animation-delay: 2.5s; }
-
-        .item a {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            color: white;
-            text-decoration: none;
-            position: relative;
-            z-index: 2;
-        }
-
-        .item img {
+        .tile img {
             width: 80px;
             height: 80px;
-            border-radius: 50%;
-            margin-right: 16px;
+            border-radius: 24px;
+            margin-bottom: 16px;
             object-fit: cover;
             border: 5px solid rgba(255,255,255,0.95);
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
+            z-index: 2;
             opacity: 0;
             animation: fadeInImg 0.6s forwards;
         }
-        .item:hover img {
-            transform: scale(1.15);
-        }
-        @keyframes fadeInImg {
-            to { opacity: 1; }
-        }
+        .tile:hover img { transform: scale(1.15); }
+        @keyframes fadeInImg { to { opacity: 1; } }
 
-        .item-content h3 {
-            margin: 0 0 6px;
+        .tile-title {
+            font-weight: bold;
             font-size: 19px;
-            color: #ffd700;
+            margin-bottom: 6px;
             text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+            z-index: 2;
         }
-        .item-content p {
-            margin: 0;
+        .tile-desc {
             font-size: 14px;
             color: #f8f8f8;
+            line-height: 1.5;
             opacity: 0.96;
+            z-index: 2;
         }
 
-        /* 模式切换 */
+        /* 个人简介 */
+        .profile-card {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-info h3 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            color: #ffd700;
+        }
+        .profile-info p {
+            margin: 4px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #eee;
+        }
+        .signature {
+            font-style: italic;
+            color: #ffcc00;
+            margin-top: 10px;
+            font-size: 13px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        /* 防封备用区 */
+        .backup-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff0000, #ff7300);
+            border-radius: 16px;
+            text-align: center;
+            color: #fff;
+        }
+        .backup-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .qr-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .qr-item {
+            text-align: center;
+        }
+        .qr-item p {
+            margin: 8px 0;
+            font-weight: bold;
+        }
+        .qr-item img {
+            width: 160px;
+            height: 160px;
+            border-radius: 12px;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        /* 模式切换 + 返回顶部 */
         .mode-toggle {
             position: fixed;
             bottom: 25px;
@@ -198,7 +289,7 @@
             cursor: pointer;
             backdrop-filter: blur(12px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-            transition: all 0.4s ease;
+            transition: all 0.4s;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -207,12 +298,6 @@
             background: rgba(255, 215, 0, 0.9);
             transform: scale(1.12) rotate(15deg);
         }
-        .mode-toggle svg {
-            width: 26px;
-            height: 26px;
-        }
-
-        /* 返回顶部 */
         .back-top {
             position: fixed;
             bottom: 80px;
@@ -233,11 +318,11 @@
         .back-top.show { opacity: 1; }
 
         @media (max-width: 480px) {
-            .item img { width: 68px; height: 68px; }
-            .item-content h3 { font-size: 17px; }
-            .item-content p { font-size: 13px; }
-            .item { padding: 16px; }
-            .container { padding: 16px; }
+            .tile img { width: 68px; height: 68px; }
+            .tile-title { font-size: 17px; }
+            .tile-desc { font-size: 13px; }
+            .tile { padding: 22px 16px; min-height: 175px; }
+            .tiles-container { gap: 16px; padding: 16px; }
         }
     </style>
 </head>
@@ -245,88 +330,114 @@
 
     <!-- 滑动公告 -->
     <div class="announcement">
-        <div class="announcement-content">防止掉失！注册后再充值！</div>
+        <div class="announcement-content">
+            防止影片掉失，先注册再购买！！
+        </div>
     </div>
 
     <!-- 头部警告 -->
     <div class="header">
-        <h2>防丢失！先注册再购买！<br>永久网址: kp235.vip</h2>
+        防止掉失！购买影片前先注册
     </div>
 
-    <!-- 磁贴列表 -->
-    <div class="container">
-        <div class="item" style="--flow-speed: 20s;">
-            <a href="https://u4p8z6h4s3o9q8h7j4y9.cc/?channel=6d530728c0583d8037db5bd8e9e6ea52" target="_blank">
-                <img src="images11.jpg" alt="Ai脱衣">
-                <div class="item-content">
-                    <h3>1. Ai脱衣</h3>
-                    <p>Ai去衣！满足你的性幻想！</p>
-                </div>
-            </a>
-        </div>
+    <!-- 彩虹磁贴 -->
+    <div class="tiles-container">
+        <a href="https://l6k0z7n2y7s9z8m4v4i9.cc/?channel=6d530728c0583d8037db5bd8e9e6ea52" target="_blank" class="tile">
+            <img src="images11.jpg" alt="Ai脱衣">
+            <div class="tile-title">Ai脱衣</div>
+            <div class="tile-desc">AI智能去衣<br>满足你的性幻想！</div>
+        </a>
 
-        <div class="item" style="--flow-speed: 20s;">
-            <a href="http://wv24.icu" target="_blank">
-                <img src="images12.jpg" alt="呦女萝莉">
-                <div class="item-content">
-                    <h3>2. 幼女萝莉</h3>
-                    <p>什么鸡巴类型的视频都有</p>
-                </div>
-            </a>
-        </div>
+        <a href="http://wv24.icu" target="_blank" class="tile">
+            <img src="images12.jpg" alt="幼女萝莉">
+            <div class="tile-title">幼女萝莉</div>
+            <div class="tile-desc">高清萝莉资源<br>分类清晰</div>
+        </a>
 
-        <div class="item" style="--flow-speed: 20s;">
-            <a href="http://avaw.cc" target="_blank">
-                <img src="images3.jpg" alt="直播">
-                <div class="item-content">
-                    <h3>3. 直播</h3>
-                    <p>真人直播平台</p>
-                </div>
-            </a>
-        </div>
+        <a href="http://avaw.cc" target="_blank" class="tile">
+            <img src="images3.jpg" alt="真人直播">
+            <div class="tile-title">真人直播</div>
+            <div class="tile-desc">24小时真人<br>互动强</div>
+        </a>
 
-        <div class="item" style="--flow-speed: 20s;">
-            <a href="http://se678.top" target="_blank">
-                <img src="images4.jpg" alt="咸湿视频">
-                <div class="item-content">
-                    <h3>4. 咸湿视频</h3>
-                    <p>人兽 欧美 亚洲 萝莉 绿帽</p>
-                </div>
-            </a>
-        </div>
+        <a href="http://se678.top" target="_blank" class="tile">
+            <img src="images4.jpg" alt="咸湿视频">
+            <div class="tile-title">咸湿视频</div>
+            <div class="tile-desc">人兽/欧美/亚洲<br>应有尽有</div>
+        </a>
 
-        <div class="item" style="--flow-speed: 20s;">
-            <a href="https://www.iawrq2.vip:9103/entry/register14330/?i_code=27936549" target="_blank">
-                <img src="images1.jpg" alt="开云体育">
-                <div class="item-content">
-                    <h3>5. 开云体育</h3>
-                    <p>体育赛事娱乐平台</p>
-                </div>
-            </a>
-        </div>
+        <a href="https://www.iawrq2.vip:9103/entry/register14330/?i_code=27936549" target="_blank" class="tile">
+            <img src="images1.jpg" alt="开云体育">
+            <div class="tile-title">开云体育</div>
+            <div class="tile-desc">全球赛事直播<br>实时投注</div>
+        </a>
 
-        <div class="item" style="--flow-speed: 20s;">
-            <a href="http://42.51.43.192:25504?Tesla=NjAwNDMz" target="_blank">
-                <img src="images2.jpg" alt="欧亚国际">
-                <div class="item-content">
-                    <h3>6. 欧亚国际</h3>
-                    <p>实体娱乐城全新娱乐体验</p>
-                </div>
-            </a>
+        <a href="http://42.51.43.192:25504?Tesla=NjAwNDMz" target="_blank" class="tile">
+            <img src="images2.jpg" alt="欧亚国际">
+            <div class="tile-title">欧亚国际</div>
+            <div class="tile-desc">实体娱乐城<br>尊贵体验</div>
+        </a>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="profile-card">
+        <div class="profile-avatar">
+            <img src="avatar.jpg" alt="站长头像">
+        </div>
+        <div class="profile-info">
+            <h3>小黑巷站长</h3>
+            <p>欢迎来到小黑巷！这里是你深夜的秘密花园</p>
+            <p>每日更新最新资源，专注分享不为人知的快乐</p>
+            <p>Heart Heart Heart Heart Heart Heart</p>
+            <p class="signature" id="signature"></p>
+        </div>
+    </div>
+
+    <!-- 防封备用区 -->
+    <div class="backup-section">
+        <h3>主站被封？扫码继续！</h3>
+        <div class="qr-container">
+            <!-- 备用站点 kp235.vip -->
+            <div class="qr-item">
+                <p style="color:#0ff;">备用站点（永不封）</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://kp235.vip" alt="备用站点">
+                <p>kp235.vip</p>
+            </div>
+            <!-- GitHub 源站 liaotian -->
+            <div class="qr-item">
+                <p style="color:#ff0;">GitHub 源站</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://fcyqdr.github.io/liaotian/" alt="GitHub源">
+                <p>fcyqdr.github.io/liaotian</p>
+            </div>
         </div>
     </div>
 
     <!-- 模式切换 -->
-    <button class="mode-toggle" id="mode-toggle" title="切换到亮白模式">
+    <button class="mode-toggle" id="mode-toggle">
         <svg id="mode-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M21.64 13a1 1 0 0 1-1 .89 8.05 8.05 0 1 1-8.94-8.94 1 1 0 0 1 .9 1.75A6.06 6.06 0 1 0 18.75 19a1 1 0 0 1 1.9.36 8 8 0 0 1 1-6.36z"/>
         </svg>
     </button>
 
     <!-- 返回顶部 -->
-    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">回顶部</button>
+    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
 
     <script>
+        // 动态签名
+        const signatures = ["深夜不打烊，快乐不停歇","资源每日更新，质量有保证","注册后享永久观看权限","一个人的快乐，由我来守护","小黑巷，懂你的夜"];
+        let sigIndex = 0;
+        const sigEl = document.getElementById('signature');
+        function changeSignature() {
+            sigEl.style.opacity = '0';
+            setTimeout(() => {
+                sigEl.textContent = signatures[sigIndex];
+                sigEl.style.opacity = '1';
+                sigIndex = (sigIndex + 1) % signatures.length;
+            }, 500);
+        }
+        changeSignature();
+        setInterval(changeSignature, 8000);
+
         // 模式切换
         const modeBtn = document.getElementById('mode-toggle');
         const icon = document.getElementById('mode-icon');
@@ -336,24 +447,14 @@
             document.body.classList.toggle('light');
             if (document.body.classList.contains('light')) {
                 icon.innerHTML = `<path d="${sunPath}"/>`;
-                modeBtn.title = '切换到暗黑模式';
             } else {
                 icon.innerHTML = `<path d="${moonPath}"/>`;
-                modeBtn.title = '切换到亮白模式';
             }
         });
 
         // 返回顶部
         window.addEventListener('scroll', () => {
             document.querySelector('.back-top').classList.toggle('show', window.scrollY > 300);
-        });
-
-        // 点击磁贴直接进入网站
-        document.querySelectorAll('.item a').forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault(); // 防止默认跳转（可选）
-                window.open(link.getAttribute('href'), '_blank');
-            });
         });
     </script>
 
