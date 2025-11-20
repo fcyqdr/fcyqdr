@@ -6,384 +6,138 @@
     <title>小黑巷 - 深夜不打烊的秘密花园</title>
     <meta name="description" content="小黑巷每日更新AI脱衣、萝莉资源、真人直播，注册永久观看！">
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics + Statcounter -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-95QQNEC27X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-95QQNEC27X');
-    </script>
-
-    <!-- Statcounter for kp235.vip -->
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-95QQNEC27X');</script>
     <script type="text/javascript">
-    var sc_project=13181548; 
-    var sc_invisible=1; 
-    var sc_security="cb4659eb"; 
+    var sc_project=13180843;var sc_invisible=0;var sc_security="f4187e06";var scJsHost="https://";
+    document.write("<sc"+"ript type='text/javascript' src='"+scJsHost+"statcounter.com/counter/counter.js'></"+"script>");
     </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics"
-    href="https://statcounter.com/" target="_blank"><img
-    class="statcounter"
-    src="https://c.statcounter.com/13181548/0/cb4659eb/1/"
-    alt="Web Analytics"
-    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-    <!-- End of Statcounter Code -->
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: "Microsoft YaHei", Arial, sans-serif;
-            background: #000 url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
-            color: #fff;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-            transition: background 0.6s ease;
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#000;color:#fff;min-height:100vh;overflow-x:hidden}
 
-        /* 暗黑/亮白模式 */
-        body.light { 
-            background: #f0f8ff url('https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
-        }
-        body.light::before { background: rgba(255, 255, 255, 0.8); }
+        .announcement{background:linear-gradient(90deg,#ff8a00,#e52e71);color:#fff;text-align:center;padding:8px 0;font-weight:bold;font-size:15px;overflow:hidden;white-space:nowrap}
+        .announcement-content{display:inline-block;animation:scroll 15s linear infinite}
+        @keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+        .header{text-align:center;padding:16px;background:linear-gradient(135deg,#9c27b0,#e91e63);font-weight:bold;font-size:19px;text-shadow:0 0 12px #ff00ff;animation:glow 2s infinite}
+        @keyframes glow{0%,100%{text-shadow:0 0 12px #ff00ff,0 0 24px #ff0000}50%{text-shadow:0 0 6px #fff}}
 
-        /* 滑动公告 */
-        .announcement {
-            position: relative;
-            z-index: 10;
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
-            color: #fff;
-            text-align: center;
-            padding: 6px 0;
-            font-size: 14px;
-            overflow: hidden;
-            white-space: nowrap;
-            font-weight: bold;
-        }
-        .announcement-content {
-            display: inline-block;
-            animation: scroll 12s linear infinite;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+        .tiles-container{padding:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1000px;margin:0 auto}
+        @media(min-width:768px){.tiles-container{grid-template-columns:repeat(3,1fr);gap:22px}}
 
-        /* 头部警告 */
-        .header {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 15px;
-            background: linear-gradient(135deg, #9c27b0, #e91e63);
-            font-weight: bold;
-            font-size: 18px;
-            text-shadow: 0 0 12px #ff00ff;
-            animation: glow 2s infinite;
-        }
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 12px #ff00ff, 0 0 24px #ff0000; }
-            50% { text-shadow: 0 0 6px #fff; }
-        }
+        /* 超流畅炫酷磁贴（已优化性能） */
+        .tile{height:188px;border-radius:28px;position:relative;overflow:hidden;cursor:pointer;padding:6px;
+            background:linear-gradient(45deg,#ff0040,#ff8c00,#ff0,#00ff00,#00ffff,#0066ff,#8b00ff,#ff0040);
+            background-size:400% 400%;animation:rainbow 20s linear infinite;
+            box-shadow:0 8px 25px rgba(0,0,0,0.6);transition:transform .35s ease,box-shadow .35s ease;will-change:transform}
+        .tile:hover{transform:translateY(-10px);box-shadow:0 20px 45px rgba(0,0,0,0.85)}
+        @keyframes rainbow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-        /* 磁贴容器 */
-        .tiles-container {
-            position: relative;
-            z-index: 10;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        @media (min-width: 768px) {
-            .tiles-container { grid-template-columns: repeat(3, 1fr); }
-        }
+        .tile-inner{width:100%;height:100%;border-radius:22px;overflow:hidden;position:relative;background:#000}
+        .tile-bg{position:absolute;top:0;left:0;right:0;bottom:0;background-size:cover !important;background-position:center !important;transform:scale(1.02)}
+        .tile::after{content:'';position:absolute;left:0;right:0;bottom:0;height:75%;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.9))}
+        .tile-content{position:absolute;bottom:16px;left:0;right:0;text-align:center;z-index:2;padding:0 12px}
+        .tile-title{font-size:19px;font-weight:bold;color:#fff;text-shadow:0 0 12px #00ffff,0 0 20px #00ffff;margin-bottom:3px}
+        .tile-desc{font-size:13.5px;line-height:1.4;color:#fff;text-shadow:0 0 10px #00ffff}
 
-        /* 彩虹流动磁贴 */
-        .tile {
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.45);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 28px 18px;
-            min-height: 190px;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-            background-size: 400% 400%;
-            animation: rainbowFlow var(--flow-speed, 20s) ease infinite;
-        }
-        .tile:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 24px 48px rgba(0,0,0,0.55);
-        }
-        .tile::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.25);
-            border-radius: 32px;
-            z-index: 1;
-        }
-        @keyframes rainbowFlow {
-            0%   { background-position: 0% 50%; }
-            50%  { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .tile:nth-child(1) { animation-delay: 0s; }
-        .tile:nth-child(2) { animation-delay: 0.5s; }
-        .tile:nth-child(3) { animation-delay: 1s; }
-        .tile:nth-child(4) { animation-delay: 1.5s; }
-        .tile:nth-child(5) { animation-delay: 2s; }
-        .tile:nth-child(6) { animation-delay: 2.5s; }
-
-        .tile img {
-            width: 80px;
-            height: 80px;
-            border-radius: 24px;
-            margin-bottom: 16px;
-            object-fit: cover;
-            border: 5px solid rgba(255,255,255,0.95);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            transition: transform 0.3s;
-            z-index: 2;
-            opacity: 0;
-            animation: fadeInImg 0.6s forwards;
-        }
-        .tile:hover img { transform: scale(1.15); }
-        @keyframes fadeInImg { to { opacity: 1; } }
-
-        .tile-title {
-            font-weight: bold;
-            font-size: 19px;
-            margin-bottom: 6px;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.7);
-            z-index: 2;
-        }
-        .tile-desc {
-            font-size: 14px;
-            color: #f8f8f8;
-            line-height: 1.5;
-            opacity: 0.96;
-            z-index: 2;
+        @media(max-width:480px){
+            .tile{height:168px;padding:5px}.tile-inner{border-radius:19px}
+            .tile-title{font-size:17px}.tile-desc{font-size:12.5px}
         }
 
         /* 个人简介 */
-        .profile-card {
-            position: relative;
-            z-index: 10;
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .profile-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .profile-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .profile-info h3 {
-            margin: 0 0 8px;
-            font-size: 20px;
-            color: #ffd700;
-        }
-        .profile-info p {
-            margin: 4px 0;
-            font-size: 14px;
-            line-height: 1.5;
-            color: #eee;
-        }
-        .signature {
-            font-style: italic;
-            color: #ffcc00;
-            margin-top: 10px;
-            font-size: 13px;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-        @keyframes fadeIn { to { opacity: 1; } }
+        .profile-card{max-width:1000px;margin:20px auto;padding:20px;background:rgba(255,255,255,0.15);border-radius:16px;backdrop-filter:blur(12px);box-shadow:0 8px 25px rgba(0,0,0,0.3);display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+        .profile-avatar{width:90px;height:90px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.5);box-shadow:0 4px 15px rgba(0,0,0,0.3)}
+        .profile-avatar img{width:100%;height:100%;object-fit:cover}
+        .profile-info h3{margin:0 0 8px;font-size:20px;color:#ffd700}
+        .profile-info p{margin:4px 0;font-size:14px;line-height:1.5;color:#eee}
+        .signature{font-style:italic;color:#ffcc00;margin-top:10px;font-size:13px}
 
-        /* 防封备用区 */
-        .backup-section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            background: linear-gradient(45deg, #ff0000, #ff7300);
-            border-radius: 16px;
-            text-align: center;
-            color: #fff;
-        }
-        .backup-section h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-        .qr-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .qr-item {
-            text-align: center;
-        }
-        .qr-item p {
-            margin: 8px 0;
-            font-weight: bold;
-        }
-        .qr-item img {
-            width: 160px;
-            height: 160px;
-            border-radius: 12px;
-            border: 3px solid #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-        }
+        /* 防封区 */
+        .backup-section{max-width:1000px;margin:40px auto;padding:20px;background:linear-gradient(45deg,#ff0000,#ff7300);border-radius:16px;text-align:center;color:#fff}
+        .qr-container{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+        .qr-item p{margin:8px 0;font-weight:bold}
+        .qr-item img{width:160px;height:160px;border-radius:12px;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,0.4)}
 
-        /* 模式切换 + 返回顶部 */
-        .mode-toggle {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 100;
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 0, 0, 0.6);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            cursor: pointer;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-            transition: all 0.4s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .mode-toggle:hover {
-            background: rgba(255, 215, 0, 0.9);
-            transform: scale(1.12) rotate(15deg);
-        }
-        .back-top {
-            position: fixed;
-            bottom: 80px;
-            right: 25px;
-            width: 44px;
-            height: 44px;
-            background: rgba(255,107,0,0.9);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 99;
-            opacity: 0;
-            transition: opacity 0.3s;
-            cursor: pointer;
-        }
-        .back-top.show { opacity: 1; }
-
-        @media (max-width: 480px) {
-            .tile img { width: 68px; height: 68px; }
-            .tile-title { font-size: 17px; }
-            .tile-desc { font-size: 13px; }
-            .tile { padding: 22px 16px; min-height: 175px; }
-            .tiles-container { gap: 16px; padding: 16px; }
-        }
+        /* 按钮 */
+        .mode-toggle{position:fixed;bottom:25px;right:25px;z-index:100;width:50px;height:50px;background:rgba(0,0,0,0.6);border:none;border-radius:50%;color:white;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 6px 20px rgba(0,0,0,0.4)}
+        .back-top{position:fixed;bottom:80px;right:25px;z-index:99;width:44px;height:44px;background:rgba(255,107,0,0.9);border:none;border-radius:50%;color:white;font-weight:bold;opacity:0;transition:opacity .3s;cursor:pointer}
+        .back-top.show{opacity:1}
     </style>
 </head>
 <body>
 
-    <!-- 滑动公告 -->
-    <div class="announcement">
-        <div class="announcement-content">
-            防止影片掉失，先注册再购买！！
-        </div>
-    </div>
+    <div class="announcement"><div class="announcement-content">防止影片掉失，先注册再购买！！</div></div>
+    <div class="header">防止掉失！购买影片前先注册</div>
 
-    <!-- 头部警告 -->
-    <div class="header">
-        防止掉失！购买影片前先注册
-    </div>
-
-    <!-- 彩虹磁贴 -->
+    <!-- 6个炫酷磁贴 -->
     <div class="tiles-container">
         <a href="http://vavc.cc" target="_blank" class="tile">
-            <img src="images20.jpg" alt="Ai脱衣">
-            <div class="tile-title">偷情群交</div>
-            <div class="tile-desc">只要你想的<br>都能满足你的欲望</div>
+            <div class="tile-inner">
+                <div class="tile-bg" style="background-image:url('images20.jpg');"></div>
+                <div class="tile-content">
+                    <div class="tile-title">偷情群交</div>
+                    <div class="tile-desc">只要你想的<br>满足你的所有欲望！</div>
+                </div>
+            </div>
         </a>
 
         <a href="http://wv24.icu" target="_blank" class="tile">
-            <img src="images12.jpg" alt="幼女萝莉">
-            <div class="tile-title">幼女萝莉</div>
-            <div class="tile-desc">高清萝莉资源<br>分类清晰</div>
+            <div class="tile-inner">
+                <div class="tile-bg" style="background-image:url('images21.jpg');"></div>
+                <div class="tile-content">
+                    <div class="tile-title">幼女萝莉</div>
+                    <div class="tile-desc">高清萝莉资源<br>分类清晰</div>
+                </div>
+            </div>
         </a>
 
         <a href="http://avaw.cc" target="_blank" class="tile">
-            <img src="images3.jpg" alt="真人直播">
-            <div class="tile-title">真人直播</div>
-            <div class="tile-desc">24小时真人<br>互动强</div>
+            <div class="tile-inner">
+                <div class="tile-bg" style="background-image:url('images22.jpg');"></div>
+                <div class="tile-content">
+                    <div class="tile-title">真人直播</div>
+                    <div class="tile-desc">24小时真人<br>互动强</div>
+                </div>
+            </div>
         </a>
 
         <a href="http://se678.top" target="_blank" class="tile">
-            <img src="images4.jpg" alt="咸湿视频">
-            <div class="tile-title">咸湿视频</div>
-            <div class="tile-desc">人兽/欧美/亚洲<br>应有尽有</div>
+            <div class="tile-inner">
+                <div class="tile-bg" style="background-image:url('images23.jpg');"></div>
+                <div class="tile-content">
+                    <div class="tile-title">咸湿视频</div>
+                    <div class="tile-desc">人兽/欧美/亚洲<br>应有尽有</div>
+                </div>
+            </div>
         </a>
 
         <a href="https://www.iawrq2.vip:9103/entry/register14330/?i_code=27936549" target="_blank" class="tile">
-            <img src="images1.jpg" alt="开云体育">
-            <div class="tile-title">开云体育</div>
-            <div class="tile-desc">全球赛事直播<br>实时投注</div>
+            <div class="tile-inner">
+                <div class="tile-bg" style="background-image:url('images1.jpg');"></div>
+                <div class="tile-content">
+                    <div class="tile-title">开云体育</div>
+                    <div class="tile-desc">全球赛事直播<br>实时投注</div>
+                </div>
+            </div>
         </a>
 
         <a href="http://42.51.43.192:25504?Tesla=NjAwNDMz" target="_blank" class="tile">
-            <img src="images2.jpg" alt="欧亚国际">
-            <div class="tile-title">欧亚国际</div>
-            <div class="tile-desc">实体娱乐城<br>尊贵体验</div>
+            <div class="tile-inner">
+                <div class="tile-bg" style="background-image:url('images2.jpg');"></div>
+                <div class="tile-content">
+                    <div class="tile-title">欧亚国际</div>
+                    <div class="tile-desc">实体娱乐城<br>尊贵体验</div>
+                </div>
+            </div>
         </a>
     </div>
 
     <!-- 个人简介 -->
     <div class="profile-card">
-        <div class="profile-avatar">
-            <img src="avatar.jpg" alt="站长头像">
-        </div>
+        <div class="profile-avatar"><img src="avatar.jpg" alt="站长头像"></div>
         <div class="profile-info">
             <h3>小黑巷站长</h3>
             <p>欢迎来到小黑巷！这里是你深夜的秘密花园</p>
@@ -395,68 +149,31 @@
 
     <!-- 防封备用区 -->
     <div class="backup-section">
-        <h3>主站被封？扫码继续！</h3>
+        <h3>主站被封？扫码继续！永不失联</h3>
         <div class="qr-container">
-            <!-- 备用站点 kp235.vip -->
-            <div class="qr-item">
-                <p style="color:#0ff;">备用站点（永不封）</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://kp235.vip" alt="备用站点">
+            <div class="qr-item"><p style="color:#0ff;">备用站点（永不封）</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://kp235.vip">
                 <p>kp235.vip</p>
             </div>
-            <!-- GitHub 源站 liaotian -->
-            <div class="qr-item">
-                <p style="color:#ff0;">GitHub 源站</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://fcyqdr.github.io/liaotian/" alt="GitHub源">
+            <div class="qr-item"><p style="color:#ff0;">GitHub 永久地址</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://fcyqdr.github.io/liaotian/">
                 <p>fcyqdr.github.io/liaotian</p>
             </div>
         </div>
     </div>
 
-    <!-- 模式切换 -->
-    <button class="mode-toggle" id="mode-toggle">
-        <svg id="mode-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21.64 13a1 1 0 0 1-1 .89 8.05 8.05 0 1 1-8.94-8.94 1 1 0 0 1 .9 1.75A6.06 6.06 0 1 0 18.75 19a1 1 0 0 1 1.9.36 8 8 0 0 1 1-6.36z"/>
-        </svg>
-    </button>
-
-    <!-- 返回顶部 -->
+    <button class="mode-toggle" id="mode-toggle">Dark Mode Icon</button>
     <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
 
     <script>
         // 动态签名
-        const signatures = ["深夜不打烊，快乐不停歇","资源每日更新，质量有保证","注册后享永久观看权限","一个人的快乐，由我来守护","小黑巷，懂你的夜"];
-        let sigIndex = 0;
-        const sigEl = document.getElementById('signature');
-        function changeSignature() {
-            sigEl.style.opacity = '0';
-            setTimeout(() => {
-                sigEl.textContent = signatures[sigIndex];
-                sigEl.style.opacity = '1';
-                sigIndex = (sigIndex + 1) % signatures.length;
-            }, 500);
-        }
-        changeSignature();
-        setInterval(changeSignature, 8000);
+        const signatures=["深夜不打烊，快乐不停歇","资源每日更新，质量有保证","注册后享永久观看权限","一个人的快乐，由我来守护","小黑巷，懂你的夜"];
+        let i=0;const sig=document.getElementById('signature');
+        function change(){sig.style.opacity=0;setTimeout(()=>{sig.textContent=signatures[i];sig.style.opacity=1;i=(i+1)%signatures.length},500)}
+        change();setInterval(change,8000);
 
-        // 模式切换
-        const modeBtn = document.getElementById('mode-toggle');
-        const icon = document.getElementById('mode-icon');
-        const moonPath = "M21.64 13a1 1 0 0 1-1 .89 8.05 8.05 0 1 1-8.94-8.94 1 1 0 0 1 .9 1.75A6.06 6.06 0 1 0 18.75 19a1 1 0 0 1 1.9.36 8 8 0 0 1 1-6.36z";
-        const sunPath = "M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-7v2a1 1 0 1 1-2 0V0a1 1 0 1 1 2 0zm0 22v-2a1 1 0 1 1-2 0v2a1 1 0 1 1 2 0zm10-10h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2zM2 12h2a1 1 0 1 1 0 2H2a1 1 0 1 1 0-2zm17.66-6.34l-1.42 1.42a1 1 0 1 1-1.42-1.42l1.42-1.42a1 1 0 1 1 1.42 1.42zm-11.32 0a1 1 0 0 1 0 1.42l-1.42 1.42a1 1 0 1 1-1.42-1.42l1.42-1.42a1 1 0 0 1 1.42 0zm11.32 12.68a1 1 0 0 1 0-1.42l1.42-1.42a1 1 0 1 1 1.42 1.42l-1.42 1.42a1 1 0 0 1-1.42 0zm-11.32 0a1 1 0 0 1-1.42 0l-1.42-1.42a1 1 0 1 1 1.42-1.42l1.42 1.42a1 1 0 0 1 0 1.42z";
-        modeBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light');
-            if (document.body.classList.contains('light')) {
-                icon.innerHTML = `<path d="${sunPath}"/>`;
-            } else {
-                icon.innerHTML = `<path d="${moonPath}"/>`;
-            }
-        });
-
-        // 返回顶部
-        window.addEventListener('scroll', () => {
-            document.querySelector('.back-top').classList.toggle('show', window.scrollY > 300);
-        });
+        // 返回顶部按钮
+        window.addEventListener('scroll',()=>{document.querySelector('.back-top').classList.toggle('show',window.scrollY>300)});
     </script>
-
 </body>
 </html>
