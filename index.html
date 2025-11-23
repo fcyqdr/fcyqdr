@@ -27,7 +27,7 @@
         .tiles-container{padding:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1000px;margin:0 auto}
         @media(min-width:768px){.tiles-container{grid-template-columns:repeat(3,1fr);gap:22px}}
 
-        /* 超流畅炫酷磁贴（已优化性能） */
+        /* 超流畅炫酷磁贴 */
         .tile{height:188px;border-radius:28px;position:relative;overflow:hidden;cursor:pointer;padding:6px;
             background:linear-gradient(45deg,#ff0040,#ff8c00,#ff0,#00ff00,#00ffff,#0066ff,#8b00ff,#ff0040);
             background-size:400% 400%;animation:rainbow 20s linear infinite;
@@ -47,7 +47,6 @@
             .tile-title{font-size:17px}.tile-desc{font-size:12.5px}
         }
 
-        /* 个人简介 */
         .profile-card{max-width:1000px;margin:20px auto;padding:20px;background:rgba(255,255,255,0.15);border-radius:16px;backdrop-filter:blur(12px);box-shadow:0 8px 25px rgba(0,0,0,0.3);display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
         .profile-avatar{width:90px;height:90px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.5);box-shadow:0 4px 15px rgba(0,0,0,0.3)}
         .profile-avatar img{width:100%;height:100%;object-fit:cover}
@@ -55,13 +54,11 @@
         .profile-info p{margin:4px 0;font-size:14px;line-height:1.5;color:#eee}
         .signature{font-style:italic;color:#ffcc00;margin-top:10px;font-size:13px}
 
-        /* 防封区 */
         .backup-section{max-width:1000px;margin:40px auto;padding:20px;background:linear-gradient(45deg,#ff0000,#ff7300);border-radius:16px;text-align:center;color:#fff}
         .qr-container{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
         .qr-item p{margin:8px 0;font-weight:bold}
         .qr-item img{width:160px;height:160px;border-radius:12px;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,0.4)}
 
-        /* 按钮 */
         .mode-toggle{position:fixed;bottom:25px;right:25px;z-index:100;width:50px;height:50px;background:rgba(0,0,0,0.6);border:none;border-radius:50%;color:white;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 6px 20px rgba(0,0,0,0.4)}
         .back-top{position:fixed;bottom:80px;right:25px;z-index:99;width:44px;height:44px;background:rgba(255,107,0,0.9);border:none;border-radius:50%;color:white;font-weight:bold;opacity:0;transition:opacity .3s;cursor:pointer}
         .back-top.show{opacity:1}
@@ -72,7 +69,7 @@
     <div class="announcement"><div class="announcement-content">防止影片掉失，先注册再购买！！</div></div>
     <div class="header">防止掉失！购买影片前先注册</div>
 
-    <!-- 6个炫酷磁贴 -->
+    <!-- 6个炫彩磁贴（已按你最新图片更新） -->
     <div class="tiles-container">
         <a href="http://vavc.cc" target="_blank" class="tile">
             <div class="tile-inner">
@@ -147,17 +144,19 @@
         </div>
     </div>
 
-    <!-- 防封备用区 -->
+    <!-- 防封备用区（已更新最新永久地址） -->
     <div class="backup-section">
         <h3>主站被封？扫码继续！永不失联</h3>
         <div class="qr-container">
-            <div class="qr-item"><p style="color:#0ff;">备用站点（永不封）</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://kp235.vip">
+            <div class="qr-item">
+                <p style="color:#0ff;">备用站点（永不封）</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://kp235.vip" alt="备用站点">
                 <p>kp235.vip</p>
             </div>
-            <div class="qr-item"><p style="color:#ff0;">GitHub 永久地址</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://fcyqdr.github.io/liaotian/">
-                <p>fcyqdr.github.io/liaotian</p>
+            <div class="qr-item">
+                <p style="color:#ff0;">GitHub 永久地址（最新）</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://fcyqdr.github.io/fcyqdr" alt="GitHub永久地址">
+                <p>fcyqdr.github.io/fcyqdr</p>
             </div>
         </div>
     </div>
@@ -166,13 +165,11 @@
     <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
 
     <script>
-        // 动态签名
         const signatures=["深夜不打烊，快乐不停歇","资源每日更新，质量有保证","注册后享永久观看权限","一个人的快乐，由我来守护","小黑巷，懂你的夜"];
         let i=0;const sig=document.getElementById('signature');
         function change(){sig.style.opacity=0;setTimeout(()=>{sig.textContent=signatures[i];sig.style.opacity=1;i=(i+1)%signatures.length},500)}
         change();setInterval(change,8000);
 
-        // 返回顶部按钮
         window.addEventListener('scroll',()=>{document.querySelector('.back-top').classList.toggle('show',window.scrollY>300)});
     </script>
 </body>
