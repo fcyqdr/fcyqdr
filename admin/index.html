@@ -1,11 +1,62 @@
 <!doctype html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>后台管理</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="module" src="https://unpkg.com/sveltia-cms/dist/sveltia-cms.js"></script>
+  <script type="module" src="https://cdn.tina.io/cms"></script>
 </head>
 <body>
+  <tina-cms>
+    <script type="module">
+      window.tina = {
+        auth: {
+          type: 'github',
+        },
+        contentApiUrl: 'https://content.tina.io',
+        branch: 'main',
+        schema: {
+          collections: [
+            {
+              name: 'tiles',
+              label: '磁片管理',
+              path: '.',
+              format: 'json',
+              fields: [
+                { type: 'string', name: 'tile1_title', label: '磁片1 标题', default: '偷情群交' },
+                { type: 'string', name: 'tile1_desc', label: '磁片1 描述', isBody: true, default: '只要你想的<br>满足你的所有欲望！' },
+                { type: 'image', name: 'tile1_image', label: '磁片1 图片', default: 'images20.jpg' },
+                { type: 'string', name: 'tile1_link', label: '磁片1 链接', default: 'http://vavc.cc' },
+
+                { type: 'string', name: 'tile2_title', label: '磁片2 标题', default: '幼女萝莉' },
+                { type: 'string', name: 'tile2_desc', label: '磁片2 描述', isBody: true, default: '高清萝莉资源<br>分类清晰' },
+                { type: 'image', name: 'tile2_image', label: '磁片2 图片', default: 'images21.jpg' },
+                { type: 'string', name: 'tile2_link', label: '磁片2 链接', default: 'http://wv24.icu' },
+
+                { type: 'string', name: 'tile3_title', label: '磁片3 标题', default: '真人直播' },
+                { type: 'string', name: 'tile3_desc', label: '磁片3 描述', isBody: true, default: '24小时真人<br>互动强' },
+                { type: 'image', name: 'tile3_image', label: '磁片3 图片', default: 'images22.jpg' },
+                { type: 'string', name: 'tile3_link', label: '磁片3 链接', default: 'http://avaw.cc' },
+
+                { type: 'string', name: 'tile4_title', label: '磁片4 标题', default: '咸湿视频' },
+                { type: 'string', name: 'tile4_desc', label: '磁片4 描述', isBody: true, default: '人兽/欧美/亚洲<br>应有尽有' },
+                { type: 'image', name: 'tile4_image', label: '磁片4 图片', default: 'images23.jpg' },
+                { type: 'string', name: 'tile4_link', label: '磁片4 链接', default: 'http://se678.top' },
+
+                { type: 'string', name: 'tile5_title', label: '磁片5 标题', default: '开云体育' },
+                { type: 'string', name: 'tile5_desc', label: '磁片5 描述', isBody: true, default: '全球赛事直播<br>实时投注' },
+                { type: 'image', name: 'tile5_image', label: '磁片5 图片', default: 'images1.jpg' },
+                { type: 'string', name: 'tile5_link', label: '磁片5 链接', default: 'https://www.iawrq2.vip:9103/entry/register14330/?i_code=27936549' },
+
+                { type: 'string', name: 'tile6_title', label: '磁片6 标题', default: '欧亚国际' },
+                { type: 'string', name: 'tile6_desc', label: '磁片6 描述', isBody: true, default: '实体娱乐城<br>尊贵体验' },
+                { type: 'image', name: 'tile6_image', label: '磁片6 图片', default: 'images2.jpg' },
+                { type: 'string', name: 'tile6_link', label: '磁片6 链接', default: 'http://42.51.43.192:25504?Tesla=NjAwNDMz' },
+              ],
+            },
+          ],
+        },
+      };
+    </script>
+  </tina-cms>
 </body>
 </html>
