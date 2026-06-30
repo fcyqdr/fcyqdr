@@ -3,186 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小黑巷 - 深夜不打烊的秘密花园</title>
-    <meta name="description" content="小黑巷！">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-95QQNEC27X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-95QQNEC27X');
-    </script>
-
-    <!-- 新的 Statcounter 代码（kp235.vip 专用） -->
-    <script type="text/javascript">
-    var sc_project=13181548; 
-    var sc_invisible=1; 
-    var sc_security="af5a8bc6"; 
-    </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js" async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics"
-    href="https://statcounter.com/" target="_blank"><img
-    class="statcounter"
-    src="https://c.statcounter.com/13181548/0/af5a8bc6/1/"
-    alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-    <!-- End Statcounter Code -->
-
+    <title>SHADOW SENTINEL | 节点迁移公告</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#000;color:#fff;min-height:100vh;overflow-x:hidden}
-
-        .announcement{background:linear-gradient(90deg,#ff8a00,#e52e71);color:#fff;text-align:center;padding:8px 0;font-weight:bold;font-size:15px;overflow:hidden;white-space:nowrap}
-        .announcement-content{display:inline-block;animation:scroll 15s linear infinite}
-        @keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-        .header{text-align:center;padding:16px;background:linear-gradient(135deg,#9c27b0,#e91e63);font-weight:bold;font-size:19px;text-shadow:0 0 12px #ff00ff;animation:glow 2s infinite}
-        @keyframes glow{0%,100%{text-shadow:0 0 12px #ff00ff,0 0 24px #ff0000}50%{text-shadow:0 0 6px #fff}}
-
-        .tiles-container{padding:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1000px;margin:0 auto}
-        @media(min-width:768px){.tiles-container{grid-template-columns:repeat(3,1fr);gap:22px}}
-
-        .tile{height:188px;border-radius:28px;position:relative;overflow:hidden;cursor:pointer;padding:6px;
-            background:linear-gradient(45deg,#ff0040,#ff8c00,#ff0,#00ff00,#00ffff,#0066ff,#8b00ff,#ff0040);
-            background-size:400% 400%;animation:rainbow 20s linear infinite;
-            box-shadow:0 8px 25px rgba(0,0,0,0.6);transition:transform .35s ease,box-shadow .35s ease;will-change:transform}
-        .tile:hover{transform:translateY(-10px);box-shadow:0 20px 45px rgba(0,0,0,0.85)}
-        @keyframes rainbow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
-        .tile-inner{width:100%;height:100%;border-radius:22px;overflow:hidden;position:relative;background:#000}
-        .tile-bg{position:absolute;top:0;left:0;right:0;bottom:0;background-size:cover !important;background-position:center !important;transform:scale(1.02)}
-        .tile::after{content:'';position:absolute;left:0;right:0;bottom:0;height:75%;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.9))}
-        .tile-content{position:absolute;bottom:16px;left:0;right:0;text-align:center;z-index:2;padding:0 12px}
-        .tile-title{font-size:19px;font-weight:bold;color:#fff;text-shadow:0 0 12px #00ffff,0 0 20px #00ffff;margin-bottom:3px}
-        .tile-desc{font-size:13.5px;line-height:1.4;color:#fff;text-shadow:0 0 10px #00ffff}
-
-        @media(max-width:480px){
-            .tile{height:168px;padding:5px}.tile-inner{border-radius:19px}
-            .tile-title{font-size:17px}.tile-desc{font-size:12.5px}
+        body {
+            background-color: #050505;
+            color: #d1d1d1;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
         }
-
-        .profile-card{max-width:1000px;margin:20px auto;padding:20px;background:rgba(255,255,255,0.15);border-radius:16px;backdrop-filter:blur(12px);box-shadow:0 8px 25px rgba(0,0,0,0.3);display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
-        .profile-avatar{width:90px;height:90px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.5);box-shadow:0 4px 15px rgba(0,0,0,0.3)}
-        .profile-avatar img{width:100%;height:100%;object-fit:cover}
-        .profile-info h3{margin:0 0 8px;font-size:20px;color:#ffd700}
-        .profile-info p{margin:4px 0;font-size:14px;line-height:1.5;color:#eee}
-        .signature{font-style:italic;color:#ffcc00;margin-top:10px;font-size:13px}
-
-        .backup-section{max-width:1000px;margin:40px auto;padding:20px;background:linear-gradient(45deg,#ff0000,#ff7300);border-radius:16px;text-align:center;color:#fff}
-        .qr-container{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-        .qr-item p{margin:8px 0;font-weight:bold}
-        .qr-item img{width:160px;height:160px;border-radius:12px;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,0.4)}
-
-        .mode-toggle{position:fixed;bottom:25px;right:25px;z-index:100;width:50px;height:50px;background:rgba(0,0,0,0.6);border:none;border-radius:50%;color:white;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 6px 20px rgba(0,0,0,0.4)}
-        .back-top{position:fixed;bottom:80px;right:25px;z-index:99;width:44px;height:44px;background:rgba(255,107,0,0.9);border:none;border-radius:50%;color:white;font-weight:bold;opacity:0;transition:opacity .3s;cursor:pointer}
-        .back-top.show{opacity:1}
+        .container {
+            border-left: 3px solid #00ff41;
+            padding-left: 30px;
+            max-width: 600px;
+        }
+        h1 { color: #00ff41; font-size: 22px; margin-bottom: 30px; text-transform: uppercase; }
+        .info { margin: 20px 0; line-height: 1.6; }
+        .highlight { color: #ffffff; font-weight: bold; background: #1a1a1a; padding: 2px 6px; }
+        .footer { margin-top: 40px; font-size: 12px; color: #666; }
     </style>
 </head>
 <body>
-
-    <div class="announcement"><div class="announcement-content">网站打不开清除浏览器数据或换浏览器！防止影片掉失，先注册再购买！！</div></div>
-    <div class="header">网站打不开清除浏览器数据或换浏览器！防止掉失！购买影片前先注册</div>
-
-    <div class="tiles-container">
-        <a href="http://vavc.cc" target="_blank" class="tile">
-            <div class="tile-inner">
-                <div class="tile-bg" style="background-image:url('images20.jpg');"></div>
-                <div class="tile-content">
-                    <div class="tile-title">偸凊羣茭</div>
-                    <div class="tile-desc">只要你想的<br>满足你的所有欲望！</div>
-                </div>
-            </div>
-        </a>
-
-        <a href="http://wv24.icu" target="_blank" class="tile">
-            <div class="tile-inner">
-                <div class="tile-bg" style="background-image:url('images21.jpg');"></div>
-                <div class="tile-content">
-                    <div class="tile-title">孧囡囉莉</div>
-                    <div class="tile-desc">高清孧囡资源<br>分类清晰</div>
-                </div>
-            </div>
-        </a>
-
-        <a href="http://www.avaw.cc" target="_blank" class="tile">
-            <div class="tile-inner">
-                <div class="tile-bg" style="background-image:url('images22.jpg');"></div>
-                <div class="tile-content">
-                    <div class="tile-title">嫃亾矗譒</div>
-                    <div class="tile-desc">24小时真人<br>互动强</div>
-                </div>
-            </div>
-        </a>
-
-        <a href="http://se678.top" target="_blank" class="tile">
-            <div class="tile-inner">
-                <div class="tile-bg" style="background-image:url('images23.jpg');"></div>
-                <div class="tile-content">
-                    <div class="tile-title">咸 氵显 视频</div>
-                    <div class="tile-desc">亂囵/瓯羙/亞詶<br>应有尽有</div>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://www.iawrq2.vip:9103/entry/register14330/?i_code=27936549" target="_blank" class="tile">
-            <div class="tile-inner">
-                <div class="tile-bg" style="background-image:url('images24.jpg');"></div>
-                <div class="tile-content">
-                    <div class="tile-title">体育赛事</div>
-                    <div class="tile-desc">全球赛事直播<br></div>
-                </div>
-            </div>
-        </a>
-
-        <a href="http://www.vu34.cc" target="_blank" class="tile">
-            <div class="tile-inner">
-                <div class="tile-bg" style="background-image:url('images2.jpg');"></div>
-                <div class="tile-content">
-                    <div class="tile-title">多人狂欢</div>
-                    <div class="tile-desc">激情四射，轮流享受极致快感<br></div>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="profile-card">
-        <div class="profile-avatar"><img src="avatar.jpg" alt="站长头像"></div>
-        <div class="profile-info">
-            <h3>小黑巷站长</h3>
-            <p>欢迎来到小黑巷！这里是你深夜的秘密花园</p>
-            <p>每日更新最新资源，专注分享不为人知的快乐</p>
-            <p>Heart Heart Heart Heart Heart Heart</p>
-            <p class="signature" id="signature"></p>
+    <div class="container">
+        <h1>[STATUS: MIGRATION] 路由迁移通知</h1>
+        <div class="info">
+            <p>SHADOW SENTINEL 离岸节点已完成架构升级。</p>
+            <p>旧站访问链路即将停止服务，为确保您的资产安全与通讯审计功能不中断，请立即完成备份：</p>
+            <p>新官方域名：<span class="highlight">https://828.cx</span></p>
+            <p>请手动保存上述地址，并更新您的离岸客户端连接配置。</p>
+        </div>
+        <div class="footer">
+            [INTERNAL SYSTEM] - SHADOW SENTINEL OPS - 2026.06.30
         </div>
     </div>
-
-    <div class="backup-section">
-        <h3>主站被封？扫码继续！永不失联</h3>
-        <div class="qr-container">
-            <div class="qr-item">
-                <p style="color:#0ff;">备用站点（永不封）</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://kp235.vip" alt="备用站点">
-                <p>kp235.vip</p>
-            </div>
-            <div class="qr-item">
-                <p style="color:#ff0;">GitHub 永久地址（最新）</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://fcyqdr.github.io/fcyqdr" alt="GitHub永久地址">
-                <p>fcyqdr.github.io/fcyqdr</p>
-            </div>
-        </div>
-    </div>
-
-    <button class="mode-toggle" id="mode-toggle">Dark Mode Icon</button>
-    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
-
-    <script>
-        const signatures=["深夜不打烊，快乐不停歇","资源每日更新，质量有保证","注册后享永久观看权限","一个人的快乐，由我来守护","小黑巷，懂你的夜"];
-        let i=0;const sig=document.getElementById('signature');
-        function change(){sig.style.opacity=0;setTimeout(()=>{sig.textContent=signatures[i];sig.style.opacity=1;i=(i+1)%signatures.length},500)}
-        change();setInterval(change,8000);
-
-        window.addEventListener('scroll',()=>{document.querySelector('.back-top').classList.toggle('show',window.scrollY>300)});
-    </script>
 </body>
 </html>
