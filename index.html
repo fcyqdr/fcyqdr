@@ -2,38 +2,48 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>SHADOW SENTINEL | ROUTE MIGRATION</title>
+    <title>SHADOW SENTINEL | 迁移通知</title>
     <style>
-        body { 
-            background: #000; 
-            color: #00ff41; 
-            font-family: 'Courier New', Courier, monospace; 
-            display: flex; 
+        body {
+            background: #000;
+            color: #00ff41;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            display: flex;
             flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
         }
-        .notice { margin-bottom: 30px; text-align: center; }
-        .btn { 
-            display: inline-block; 
-            padding: 20px 40px; 
-            border: 2px solid #00ff41; 
-            color: #00ff41; 
-            text-decoration: none; 
-            font-size: 20px; 
-            transition: all 0.2s; 
+        .warning {
+            font-size: 3rem; /* 大号字体 */
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff41;
         }
-        .btn:hover { background: #00ff41; color: #000; }
+        .btn {
+            display: block;
+            width: 80%;
+            max-width: 800px;
+            padding: 50px 20px;
+            font-size: 4rem; /* 超大号字体 */
+            font-weight: 900;
+            color: #000;
+            background: #00ff41;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 0 30px #00ff41;
+            transition: transform 0.1s;
+        }
+        .btn:active { transform: scale(0.98); }
+        .sub { font-size: 1.5rem; margin-top: 30px; color: #555; }
     </style>
 </head>
 <body>
-    <div class="notice">
-        <p>[SYSTEM NOTICE] 原域名即将物理熔断</p>
-        <p>SHADOW SENTINEL 已迁移至离岸新路由</p>
-    </div>
-    
-    <a href="https://828.cx" class="btn">访问新域名：828.cx</a>
+    <div class="warning">域名即将熔断</div>
+    <a href="https://828.cx" class="btn">点此进入 828.cx</a>
+    <div class="sub">请立即更新书签</div>
 </body>
 </html>
